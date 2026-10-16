@@ -1,11 +1,28 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
+
+import { Product } from './models/product';
+import { Customer } from './models/customer';
+import { Office } from './models/office';
+
+import { ProductService } from './services/product';
+import { CustomerService } from './services/customer';
+import { OfficeService } from './services/office';
 
 @Component({
-  imports: [],
   selector: 'app-root',
-  styleUrl: './app.css',
+  standalone: true,
+  imports: [],
   templateUrl: './app.html',
+  styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('project-9');
+
+  private productService = inject(ProductService);
+  private customerService = inject(CustomerService);
+  private officeService = inject(OfficeService);
+
+  products: Product[] = this.productService.getProducts();
+  customers: Customer[] = this.customerService.getCustomers();
+  offices: Office[] = this.officeService.getOffices();
+
 }
