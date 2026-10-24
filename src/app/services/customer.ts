@@ -30,7 +30,17 @@ export class CustomerService {
     }
   ];
 
-  getCustomers(): Customer[] {
+    getCustomers(): Customer[] {
     return this.customers;
+  }
+
+  addCustomer(customer: Customer): void {
+    this.customers.push(customer);
+  }
+
+  deleteCustomer(index: number): void {
+    if (index >= 0 && index < this.customers.length) {
+      this.customers.splice(index, 1);
+    }
   }
 }

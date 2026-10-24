@@ -1,0 +1,25 @@
+.customer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.customer-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+}
+
+button {
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #b91c1c;
+}
