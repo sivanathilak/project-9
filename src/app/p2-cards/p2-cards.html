@@ -4,7 +4,7 @@
 
   @for (customer of customers; track customer.customerId) {
 
-    <div class="customer-card">
+    <div class="customer-card" (click)="selectCustomer(customer)">
       <h3>{{ customer.firstName }} {{ customer.lastName }}</h3>
 
       <p><strong>ID:</strong> {{ customer.customerId }}</p>
@@ -15,3 +15,4 @@
   }
 
 </div>
+

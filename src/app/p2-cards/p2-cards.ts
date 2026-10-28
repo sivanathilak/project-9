@@ -15,4 +15,11 @@ export class P2Cards {
 
   customers: Customer[] = this.customerService.getCustomers();
 
+  selectCustomer(customer: Customer) {
+    alert(
+      `Selected customer: ${customer.firstName} ${customer.lastName}`
+    );
+  }
+
 }
+
